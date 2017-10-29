@@ -1,16 +1,11 @@
 # Programa que pida los segundos y retorne las horas, minutos y segundos
 
-segundos = 5980
+segundos = 3600
 
 minutos = segundos / 60
-segundosRestantes = segundos % 60
+moduloSegundos = segundos % 60
 
 horas = minutos / 60
+moduloMinutos = minutos % 60
 
-if minutos > 60:
-    minutosRestantes = minutos % 60
-
-
-print(horas)
-print(minutos)
-print(segundosRestantes)
+print "%s : %s : %s" % (horas, moduloMinutos, moduloSegundos)
