@@ -56,3 +56,10 @@ __*Instalar pip en ubuntu*__
 #### Operadores matemáticos
 * en nuestro entorno virtual hacemos el archivo de operadoresMatematicos.py
  * python operadoresMatematicos.py
+
+
+
+
+
+
+ 
