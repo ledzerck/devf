@@ -1,4 +1,4 @@
-#!/Users/ledzer/Desktop/devf/env/bin/python
+#!/home/ledzer/Escritorio/devf/env/bin/python
 
 import sys
 import getopt
