@@ -47,6 +47,7 @@ Hyper Text Transfer Protocolos
 #### URI
 Manda información dentro de nuestra URL
 
+* Vamos a escribir un poquito
 
 ##### Postman
 
