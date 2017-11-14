@@ -35,3 +35,13 @@ Javascript Object Notation
 * Separación entre cliente y servidor
 * Visibilidad, fiabilidad y escalabilidad
 * La API REST siempre es independiente del tipo de plataformas o lenguajes
+
+---
+
+### Ejercicio Goodreads
+
+* Poner en postman:
+ * https://goodreads-devf-aaron.herokuapp.com/api/v1/auth/
+
+### POST
+* copiamos el POST de postman
