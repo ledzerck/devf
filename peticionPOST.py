@@ -14,7 +14,8 @@ def mi_peticion_post(nombre,apellidos,bio,edad):
         "age": edad
     }
 
-    response = requests.post(URL,json=json_send)
+    response = requests.post(
+    URL,json=json_send,headers= {"token":"okprekqlfc"})
 
     return response
 
