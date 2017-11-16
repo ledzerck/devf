@@ -22,9 +22,25 @@ Es un paradigma de programación que usa objetos para diseñar aplicaciones y pr
 * Podemos importar las clases creadas de los archivos con:
   * from clase import NombreClase
 
+---
+
 ### Constructores
 * Van a indicar las características específicas del objeto
 * Existen en todos los lenguajes orientados a objetos
 * Su sintaxis es:
   * def \_\_init\_\_ (self,caracteristicas):
 * No suele accederse directamente a sus atributos, en cambio se hace definiendo los métodos
+
+---
+
+### Herencia
+* Una clase que se crea a partir de una existente. Comparte atributos y comportamientos de la clase principal.
+* Al indicar un padre para una clase, tenemos acceso a us atributos y métodos
+* Para indicar quien es el padre, se pone entre parentesis frente a la clase
+  * class Perro(Animal):
+* Si la clase padre tiene seteados los valores, el hijo puede acceder al valor aunque no lo tenga seteado
+
+---
+
+### Liskov sustitution
+* Buscar SOLID
