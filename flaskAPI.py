@@ -1,15 +1,31 @@
 from flask import Flask,jsonify
 from flask import request
+import json
 
 # Con esto creamos el objeto flask
 app = Flask(__name__)
+
+tasks = [
+    {
+        'id': 1,
+        'title': 'Buy groceries',
+        'description': 'Milk, Cheese, Pizza, Fruit, Tylenol',
+        'done': False
+    },
+    {
+        'id': 2,
+        'title': 'Learn Python',
+        'description': 'Need to find a good Python tutorial on the web',
+        'done': False
+    }
+]
 
 @app.route('/')
 def index():
     return "Hola Mundo"
 
 # Para indicar una página que no existe
-# Necesita la e 
+# Necesita la e
 @app.errorhandler(404)
 def page_not_found(e):
     return "Esta página no existe :("
@@ -18,9 +34,12 @@ def page_not_found(e):
 @app.route('/tareas', methods = ['GET', 'POST'])
 def tareas():
     if request.method == 'GET':
-        return jsonify({'tareas':'1'})
+        return jsonify({"tareas":tasks})
     if request.method == 'POST':
-        return jsonify({'tareas':'POST'})
+        body = request.json
+        lista_tareas = []
+        lista_tareas.append(body)
+        return jsonify({'tareas_realiza':lista_tareas})
 
 @app.route('/params')
 def params():
