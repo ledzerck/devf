@@ -1,5 +1,5 @@
 from flask import Flask,jsonify, render_template
-from flask import request
+from flask import request, redirect
 import json
 
 
@@ -33,6 +33,8 @@ def index():
 # Necesita la e
 @app.errorhandler(404)
 def page_not_found(e):
+    # Podemos redireccionar
+    # return redirect('https://www.google.com.mx')
     return render_template('page.html')
 
 # Podemos indicar que tipo de peticiones va a aceptar
