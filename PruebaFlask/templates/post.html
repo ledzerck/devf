@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Mi POST de Python</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='estilo.css')}}"/>
+  </head>
+  <body class="page-post">
+
+    <div class="unaclase">
+      <h2>A ver unas peticiones POST</h2>
+      <form action="http://127.0.0.1:5000/resultadoPOST" method="POST">
+        <p><input placeholder="Nombre" type="text" name="nombre" /></p>
+        <p><input placeholder="Apellido" type="text" name="apellido" /></p>
+        <p><input placeholder="Edad" type="number" name="edad" /></p>
+        <p><input class="submit" type="submit" value="¡Postear!" /></p>
+      </form>
+    </div>
+
+  </body>
+</html>

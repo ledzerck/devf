@@ -5,10 +5,8 @@ from flask.ext.sqlalchemy import SQLAlchemy
 from sqlalchemy import text
 
 app = Flask(__name__)
-# Le indicamos un archivo de configuración
 app.config.from_pyfile('config.py')
 db = SQLAlchemy(app)
-print(db)
 
 @app.route('/')
 def index():
@@ -16,10 +14,10 @@ def index():
 
 @app.errorhandler(404)
 def page_not_found(e):
-    return render_template('page.html')
+    return render_template('error404.html')
 
-@app.route('/usuario', methods = ['GET', 'POST'])
-def usuario():
+@app.route('/usuarioGET', methods = ['GET', 'POST'])
+def usuarioget():
     if request.method == 'GET':
         sql = text('select * from user_cinta')
         result = db.engine.execute(sql)
@@ -32,6 +30,18 @@ def usuario():
 
     if request.method == 'POST':
         return "Hola desde POST"
+
+@app.route('/usuarioPOST')
+def usuariopost():
+    return render_template('post.html')
+
+@app.route('/resultadoPOST', methods = ['GET', 'POST'])
+def resultadopost():
+    if request.method == 'GET':
+        return render_template('post.html')
+    if request.method == 'POST':
+        result = request.form
+        return render_template('resultadopost.html', result = result)
 
 if __name__ == '__main__':
     app.run(debug=True,port=5000)

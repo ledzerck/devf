@@ -1,0 +1,81 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.body {
+  background-color: #60aaab;
+}
+
+.page-post {
+  background-color: #553159;
+}
+
+.page-resultado {
+  background-color: #4f9e58;
+}
+.page-get {
+  background-color: #dd5151;
+}
+  .unaclase {
+    width: 100%;
+    max-width: 400px;
+    height: 100%;
+    padding: 30px 15px;
+    text-align: center;
+    color: #fff;
+    font-family: sans-serif;
+    margin: 0 auto;
+  }
+
+.unaclase h2 {
+  font-size: 1.5em;
+  margin-bottom: 40px;
+}
+
+input {
+  border: 1px solid #fff;
+  color: #fff;
+  background: none;
+  padding: 1em;
+  border-radius: 8px;
+  width: 90%;
+  margin-bottom: 20px;;
+}
+
+.submit {
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border-radius: 25px;
+  padding: 1em 2.5em;
+  display: inline-block;
+  margin-left: 0 auto;
+  max-width: 200px;
+  margin-top: 20px;
+}
+
+.submit:hover {
+  cursor: pointer;
+  color: #60aaab;
+  background-color: #fff;
+}
+
+table {
+  width: 100%;
+  text-align: left;
+}
+
+table th, table td {
+  width: 50%;
+  padding: 20px 15px;
+  border-bottom: 1px solid rgba(255,255,255, .4);
+  text-transform: capitalize;
+}
+
+table th {
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-size: 12px;
+}
