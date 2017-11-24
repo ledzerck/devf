@@ -1,8 +1,14 @@
 from flask import Flask, jsonify, render_template
 from flask import request, redirect
 import json
+from flask.ext.sqlalchemy import SQLAlchemy
+from sqlalchemy import text
 
 app = Flask(__name__)
+# Le indicamos un archivo de configuración
+app.config.from_pyfile('config.py')
+db = SQLAlchemy(app)
+print(db)
 
 @app.route('/')
 def index():
@@ -15,7 +21,8 @@ def page_not_found(e):
 @app.route('/usuario', methods = ['GET', 'POST'])
 def usuario():
     if request.method == 'GET':
-        return "Hola desde GET"
+        hola = "un textito"
+        return render_template('get.html', hola=hola)
 
     if request.method == 'POST':
         return "Hola desde POST"

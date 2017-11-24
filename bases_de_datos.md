@@ -101,3 +101,5 @@ SELECT * FROM user_cinta;
   * pip install psycopg2
   * pip install SQLAlchemy
   * pip install Flask-SQLAlchemy
+
+* Hay que crear un archivo config.py
