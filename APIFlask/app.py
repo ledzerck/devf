@@ -21,8 +21,14 @@ def page_not_found(e):
 @app.route('/usuario', methods = ['GET', 'POST'])
 def usuario():
     if request.method == 'GET':
-        hola = "un textito"
-        return render_template('get.html', hola=hola)
+        sql = text('select * from user_cinta')
+        result = db.engine.execute(sql)
+        names = []
+        for row in result:
+            names.append(row[1])
+        return jsonify({"nombres":names})
+        #hola = "un textito"
+        #return render_template('get.html', hola=result)
 
     if request.method == 'POST':
         return "Hola desde POST"
