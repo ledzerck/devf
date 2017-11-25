@@ -28,10 +28,18 @@ def usuario():
             names.append(row[1])
         #return jsonify({"nombres":names})
         #hola = "un textito"
-        return render_template('get.html', hola=names[0])
+        ### print(len(names))
+        return render_template('get.html', hola=names)
 
     if request.method == 'POST':
-        return "Hola desde POST"
+        print(request.json)
+        id_user = request.json['id']
+        name = request.json['nombre']
+        last_name = request.json['apellido']
+        age = request.json['edad']
+        sql = "insert into user_cinta(id_user,nombre,apellido,edad) values({},'{}','{}',{});".format(id_user,name,last_name,age)
+        result = db.engine.execute(sql)
+        return jsonify({"msg":True}),201
 
 if __name__ == '__main__':
-    app.run(debug=True,port=5000)
+    app.run(debug=True,port=5001)

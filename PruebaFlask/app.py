@@ -40,8 +40,13 @@ def resultadopost():
     if request.method == 'GET':
         return render_template('post.html')
     if request.method == 'POST':
+        id_user = request.form['id_user']
+        name = request.form['nombre']
+        last_name = request.form['apellido']
+        age = request.form['edad']
         result = request.form
-        return render_template('resultadopost.html', result = result)
+
+        return render_template('resultadopost.html', result = result, id_user = id_user)
 
 if __name__ == '__main__':
     app.run(debug=True,port=5000)

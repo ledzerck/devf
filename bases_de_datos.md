@@ -103,3 +103,11 @@ SELECT * FROM user_cinta;
   * pip install Flask-SQLAlchemy
 
 * Hay que crear un archivo config.py
+
+---
+
+### ngrok
+* Túnel seguro para hacer deploy
+* Instalar ngrok
+  * Descargar y descomprimir
+  * ./ngrok http 5000 (Puerto que usamos en la api)
