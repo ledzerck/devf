@@ -9,8 +9,7 @@
 
     <div class="unaclase">
       <h2>A ver unas peticiones POST</h2>
-      <form action="https://6cc9e3a6.ngrok.io/resultadoPOST" method="POST">
-        <p><input placeholder="ID" type="text" name="id_user" /></p>
+      <form action="{{url_for('resultadopost')}}" method="POST">
         <p><input placeholder="Nombre" type="text" name="nombre" /></p>
         <p><input placeholder="Apellido" type="text" name="apellido" /></p>
         <p><input placeholder="Edad" type="number" name="edad" /></p>

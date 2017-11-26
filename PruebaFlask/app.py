@@ -40,12 +40,20 @@ def resultadopost():
     if request.method == 'GET':
         return render_template('post.html')
     if request.method == 'POST':
-        id_user = request.form['id_user']
+        # Autoincremento feo :(
+        sql = text('select * from user_cinta')
+        result = db.engine.execute(sql)
+        names = 0
+        for i in result:
+            names +=1
+        id_user = names + 1
+
         name = request.form['nombre']
         last_name = request.form['apellido']
         age = request.form['edad']
         result = request.form
-
+        sql = "insert into user_cinta(id_user,nombre,apellido,edad) values({},'{}','{}',{});".format(id_user,name,last_name,age)
+        nuevo = db.engine.execute(sql)
         return render_template('resultadopost.html', result = result, id_user = id_user)
 
 if __name__ == '__main__':
