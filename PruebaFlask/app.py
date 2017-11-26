@@ -16,20 +16,32 @@ def index():
 def page_not_found(e):
     return render_template('error404.html')
 
+
+
+
+
 @app.route('/usuarioGET', methods = ['GET', 'POST'])
 def usuarioget():
     if request.method == 'GET':
+        print(request.json)
         sql = text('select * from user_cinta')
         result = db.engine.execute(sql)
         names = []
+        ids = []
         for row in result:
             names.append(row[1])
+            ids.append(row[0])
+
+        result = request.json
         #return jsonify({"nombres":names})
-        #hola = "un textito"
-        return render_template('get.html', hola=names[0])
+        return render_template('get.html', names=names, result=result, ids=ids)
 
     if request.method == 'POST':
         return "Hola desde POST"
+
+
+
+
 
 @app.route('/usuarioPOST')
 def usuariopost():
@@ -41,7 +53,7 @@ def resultadopost():
         return render_template('post.html')
     if request.method == 'POST':
         # Autoincremento feo :(
-        sql = text('select * from user_cinta')
+        sql = text('select id_user from user_cinta')
         result = db.engine.execute(sql)
         names = 0
         for i in result:

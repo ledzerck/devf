@@ -7,9 +7,31 @@
   </head>
   <body class="page-get">
 
+    {% include 'nav.html' %}
+
     <div class="unaclase">
       <h2>Aquí hay un GET</h2>
-      <p>{{ hola }}</p>
+      
+
+      <table border="0">
+        {% for key in names %}
+          <tr>
+            <th>{{ key }}</th>
+
+          </tr>
+        {% endfor %}
+      </table>
+
+      <table border="0">
+        {% for key in ids %}
+          <tr>
+            <th>{{ key }}</th>
+
+          </tr>
+        {% endfor %}
+      </table>
+
+
     </div>
 
   </body>
