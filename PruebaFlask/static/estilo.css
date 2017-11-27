@@ -24,7 +24,7 @@ body {
 .navegacion {
   padding: 10px;
   text-align: right;
-  background-color: rgba(0,0,0,.1);
+  background-color: rgba(255,255,255,.05);
   font-size: .9em;
 }
 
@@ -85,6 +85,20 @@ table th, table td {
   padding: 20px 15px;
   border-bottom: 1px solid rgba(255,255,255, .4);
   text-transform: capitalize;
+}
+
+.page-get .unaclase{
+  max-width: 90%;
+}
+
+.page-get table {
+  background-color: rgba(255,255,255,.05);
+  margin-top: 20px;
+}
+
+.page-get table th, .page-get table td {
+  padding: 10px 15px;
+  font-size: 14px;
 }
 
 table th {

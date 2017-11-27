@@ -19,6 +19,23 @@ def page_not_found(e):
 
 
 
+@app.route('/api', methods = ['GET'])
+def api():
+    if request.method == 'GET':
+        print(request.json)
+        sql = text('select * from user_cinta')
+        result = db.engine.execute(sql)
+        items = []
+        for row in result:
+            an_item = dict(ids=row['id_user'], nombre=row['nombre'], edad=row['edad'], apellido=row['apellido'] )
+            items.append(an_item)
+
+        return jsonify(usuario=items)
+
+    if request.method == 'POST':
+        return "Hola desde POST"
+
+
 
 @app.route('/usuarioGET', methods = ['GET', 'POST'])
 def usuarioget():
@@ -26,15 +43,13 @@ def usuarioget():
         print(request.json)
         sql = text('select * from user_cinta')
         result = db.engine.execute(sql)
-        names = []
-        ids = []
+        items = []
+        api = json.dumps(items)
         for row in result:
-            names.append(row[1])
-            ids.append(row[0])
+            an_item = dict(ids=row['id_user'], names=row['nombre'], edad=row['edad'], apellido=row['apellido'] )
+            items.append(an_item)
 
-        result = request.json
-        #return jsonify({"nombres":names})
-        return render_template('get.html', names=names, result=result, ids=ids)
+        return render_template('get.html', items=items)
 
     if request.method == 'POST':
         return "Hola desde POST"

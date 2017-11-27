@@ -11,26 +11,24 @@
 
     <div class="unaclase">
       <h2>Aquí hay un GET</h2>
-      
 
       <table border="0">
-        {% for key in names %}
-          <tr>
-            <th>{{ key }}</th>
 
-          </tr>
-        {% endfor %}
+        <tr>
+          <th>Id</th>
+          <th>Nombre</th>
+          <th>Apellido</th>
+          <th>Edad</th>
+        </tr>
+      {% for item in items %}
+        <tr>
+           <th>{{item.ids}}</th>
+           <td>{{item.names}}</td>
+           <td>{{item.apellido}}</td>
+           <td>{{item.edad}}</td>
+        </tr>
+      {% endfor %}
       </table>
-
-      <table border="0">
-        {% for key in ids %}
-          <tr>
-            <th>{{ key }}</th>
-
-          </tr>
-        {% endfor %}
-      </table>
-
 
     </div>
 
