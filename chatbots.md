@@ -51,3 +51,10 @@
   "text":"hello, world!"
 }
 }
+
+---
+
+### Respuestas rápidas
+* Pasamos un json que va a esperar ciertas respuestas predefinidas
+* Como lo estamos probando en el servidor de ngrok hay que cambiar la url del webhook
+  * Vamos a nuestra aplicación de fb > webhook > Edit subscription

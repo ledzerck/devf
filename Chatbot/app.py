@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 # -*- coding_ utf-8 -*-
 from flask import Flask, request
+import requests
+from respuestas import Respuestas
 
 app = Flask(__name__)
 
@@ -17,6 +19,27 @@ def webhook():
     if request.method == 'POST':
         mensaje = request.json
         print(mensaje)
+
+        for event in mensaje['entry']:
+            message = event['messaging']
+            for event_message in message:
+                sender_id = event_message['sender']['id']
+                try:
+                    message = event_message['message']['text']
+                except:
+                    message = 'HOLA'
+
+                print(message + ' por ' + sender_id)
+                respuestas = Respuestas()
+
+                if message.upper() == 'HOLA':
+                    respuestas.saluda(sender_id)
+                elif message.upper() == 'QUICK':
+                    respuestas.quick(sender_id)
+                else:
+                    respuestas.saluda(sender_id)
+
+
         return 'True'
     elif request.method == 'GET':
         if request.args.get('hub.verify_token') == VERIFY_TOKEN:
