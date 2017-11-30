@@ -58,3 +58,10 @@
 * Pasamos un json que va a esperar ciertas respuestas predefinidas
 * Como lo estamos probando en el servidor de ngrok hay que cambiar la url del webhook
   * Vamos a nuestra aplicación de fb > webhook > Edit subscription
+* Podemos ir agregando nuevas funciones para las respuestas. en app.py indicamos con que palabras se van a disparar
+
+* https://wit.ai/apps/new
+  * intent : value
+* En wit ir a settings y copiar el token
+  * En la pag de nuestra app: Messenger > NLP integrado > (Activar) > Selecciona un modelo > Custom > Pegar el token de wit > Guardar
+* Para dar las respuestas hay que checar el json que devuelve wit

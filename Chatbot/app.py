@@ -26,6 +26,8 @@ def webhook():
                 sender_id = event_message['sender']['id']
                 try:
                     message = event_message['message']['text']
+                    # Verifica la respuesta que nos dan
+                    pln = event_message['message']['nlp']['entities']['intent'][0]['value']
                 except:
                     message = 'HOLA'
 
@@ -36,6 +38,11 @@ def webhook():
                     respuestas.saluda(sender_id)
                 elif message.upper() == 'QUICK':
                     respuestas.quick(sender_id)
+                elif message.upper() == 'GENERIC':
+                    respuestas.generic(sender_id)
+                # Respuesta del pln
+                elif pln.upper() == 'QUIERO':
+                    respuestas.pln(sender_id)
                 else:
                     respuestas.saluda(sender_id)
 
